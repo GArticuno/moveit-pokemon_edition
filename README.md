@@ -8,13 +8,14 @@ Every 25 minutes a challenge appears in which you must complete to gain experien
 
 The challenges are to exercise the eyes and the body, for us who use a lot of computers these exercises are fundamental to our health.
 
+## A pokemon partner!
+
+On this journey you will have a pokemon partner called Hatenna, a pokemon that can feel your emotions, 
+she will level up and evolve along with you on this journey for good health.
+
 ## And more!
 
 When you haven't started a cycle yet, it will show some curiosities that you may not know.
-
-## A pokemon partner!
-On this journey you will have a pokemon partner called Hatenna, a pokemon that can feel your emotions, 
-she will level up and evolve along with you on this journey for good health.
 
 ## Application
 
