@@ -43,3 +43,9 @@ a{
         font-size: 87.5%;
     }
 }
+
+@media(max-width: 360px){
+    html{
+        font-size: 60.5%;
+    }
+}

@@ -30,7 +30,7 @@ export function ChallengeBox(){
 
   return(
     <div className={styles.challengeBoxContainer}>
-      { activeChallenge ? (
+      { activeChallenge && (
         <div className={styles.challengeActive}>
           <header>Ganhe {activeChallenge.amount} xp</header>
 
@@ -57,17 +57,18 @@ export function ChallengeBox(){
             </button>
           </footer>
         </div>
-        ) : (
-        <div className={styles.challengeNotActive}>
-          <strong>Finalize um ciclo para receber um desafio</strong>
-          <img src="icons/level-up.svg" alt="Level up"/>
-          <strong>Você Sabia? </strong>
-          <p>
-            {cicleIndex.description}
-          </p>
-        </div>
         )
       }
+      { !activeChallenge && cicleIndex!=null ? (
+        <div className={styles.challengeNotActive}>
+        <strong>Finalize um ciclo para receber um desafio</strong>
+        <img src="icons/level-up.svg" alt="Level up"/>
+        <strong>Você Sabia? </strong>
+        <p>
+          {cicleIndex.description}
+        </p>
+        </div>
+      ): null}
     </div>
   )
 }

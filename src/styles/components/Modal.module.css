@@ -1,5 +1,5 @@
 .overlay{
-    background: rgba(242, 243, 245, 0.0);
+    background: rgba(0, 0, 0, 0.5);
     
     position: fixed;
     top: 0;
@@ -42,11 +42,6 @@
     color: var(--violet);
     margin-top: 0.25rem;
 
-}
-
-.container img{
-    max-width: 300px;
-    border-radius: 10px;
 }
 
 .container button{
