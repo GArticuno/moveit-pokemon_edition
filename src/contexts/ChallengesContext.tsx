@@ -205,9 +205,9 @@ export function ChallengesProvider(
   }
 // ---------------------------useEffect---------------------------------------
   useEffect(()=> {
-    Notification.requestPermission();
     newCicle();
     getUser();
+    Notification.requestPermission();
   },[])
 
   useEffect(()=> {

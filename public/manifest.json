@@ -1,16 +1,41 @@
 {
-    "name": "Move.it(Pokemon edition)",
-    "short_name": "Move.it",
-    "icons": [
-        {
-            "src": "./favicon.ico",
-            "sizes": "144x144"
-        }
-    ],
+    "theme_color": "#8244b4",
+    "background_color": "#222222",
     "display": "standalone",
     "scope": "/",
     "start_url": "./?homescreen=true",
-    "orientation": "portrait",
-    "theme_color": "#232d53",
-    "background_color": "#2c3e50"
+    "name": "Move.it (Pok\u00e9mon edition)",
+    "short_name": "Move.it",
+    "description":"Se mantenha saudável na frente do computador.",
+    "icons": [
+        {
+            "src": "/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+
+        },
+        {
+            "src": "/icons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any maskable"
+
+        },
+        {
+            "src": "/icons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any maskable"
+
+        },
+        {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+
+        }
+    ],
+    "splash_pages": null
 }

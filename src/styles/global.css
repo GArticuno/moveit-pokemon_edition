@@ -4,14 +4,14 @@
     --white: #ffffff;
     --green: #4ccb17;	
     --gray-line: #DCDDE0;
-    --text: #fafafa;
+    --text: #ffffff;
     --ciano: #00f7ff;
     --text-highlight: #B3B9FF;
     --title: #ffffff;
     --red: #E83F5B;
     --pink: #d62bcd;
-    --violet: #a359e0;
-    --violet-dark: #8244b4;
+    --violet: #8f4ac7;
+    --violet-dark: #7134a3;
 }
 
 body{
