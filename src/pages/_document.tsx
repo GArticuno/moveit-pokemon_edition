@@ -10,6 +10,7 @@ export default class Mydocument extends Document {
           <meta property="og:description" content="Se mantenha saudável na frente do computador."/>
           <meta property="og:image" content="https://i.pinimg.com/originals/f9/05/d2/f905d2c66b32604817eb3f0f9b4e82c0.jpg"/>
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
+          <link rel="manifest" href="/manifest.json"/>
         </Head>
         <body>
           <Main />
