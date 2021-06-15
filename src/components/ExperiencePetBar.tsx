@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
-import styles from '../styles/components/ExperiencePetBar.module.css'
+import styles from '../styles/components/ExperiencePetBar.module.scss'
 
 export function ExperiencePetBar(){
   const {currentPetExperience, experiencePetToNextLevel, levelPet} = useContext(ChallengesContext);
@@ -14,7 +14,7 @@ export function ExperiencePetBar(){
       title={`${currentPetExperience}xp for ${experiencePetToNextLevel}xp`}
     >
       <div>
-      <div style={{ width: `${percentToNextLevel}%` }}/>
+        <div style={{ width: `${percentToNextLevel}%` }}/>
       </div>
     </div>
     </div>
