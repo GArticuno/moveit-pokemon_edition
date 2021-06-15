@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState} from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 
-import styles from '../styles/components/Profile.module.scss';
+import styles from '../styles/components/Profile.module.css';
 
 export function Profile(){
   const {level, pet, gitHubUser, user, OpenModalUser} = useContext(ChallengesContext);
@@ -25,11 +25,11 @@ export function Profile(){
   return(
     <div className={styles.profileContainer}>
       { gitHubUser === null || user === 'null' ? (
-        <img src='/icons/noUser.svg' alt='noUser' className={styles.avatar}/>
+        <img src='/icons/noUser.svg' alt='noUser'/>
       ):(
-        <img src={gitHubUser.avatar} alt="UserSubmmit" className={styles.avatar}/>  
+        <img src={gitHubUser.avatar} alt="User"/>  
       )}
-      <div className={styles.user}>
+      <div>
         {gitHubUser === null || user === 'null' ? (
           <strong>UserName</strong>
         ):(
@@ -41,11 +41,12 @@ export function Profile(){
           <img src="icons/level.svg" alt='Level'/>
           {`Level ${level}`}
         </p>
-        <button onClick={OpenModalUser}> Edit profile </button>
+        <button onClick={OpenModalUser}> Edit ✏️ </button>
       </div>
-      <div className={styles.pet}>
+      <div>
         <img 
           src={`https://play.pokemonshowdown.com/sprites/ani/${pet}.gif`}
+          className={styles.petIcon} 
           alt='pokemon'
           title={pet}
           onClick={()=>{new Audio(`sounds/${pet}-cry.mp3`).play()}}

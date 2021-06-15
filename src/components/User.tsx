@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import { ChallengesContext } from '../contexts/ChallengesContext'
-import styles from '../styles/components/UserSubmmit.module.scss'
+import styles from '../styles/components/User.module.css'
 
-export function UserSubmmit(){
+export function User(){
   const {newUser, CloseModalUser}= useContext(ChallengesContext)
 
   const [userName, setUserName]= useState('');

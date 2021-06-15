@@ -5,8 +5,7 @@ import { LevelUpModal } from '../components/LevelUpModal';
 import { ModalPet } from '../components/ModalPet';
 import knows from '../../knows.json';
 import api from '../apiUser';
-import { UserSubmmit } from '../components/UserSubmmit';
-import { UserLogin } from '../components/UserLogin';
+import { User } from '../components/User';
 
 interface Challenge{
   type: 'body' | 'eye';
@@ -125,6 +124,7 @@ export function ChallengesProvider(
 
   function PetlevelUp(){
     setLevelPet(levelPet +1);
+    setIsModalPetOpen(true);
   }
 
   function closeModalPet(){
@@ -132,11 +132,11 @@ export function ChallengesProvider(
   }
 
 
-// ---------------------------UserSubmmit---------------------------------------
+// ---------------------------User---------------------------------------
   function getUser(){
     api.get(`${user}`)
     .then(res => {
-      if(user==='' || user === 'null'){
+      if(user===''){
         return setGitHubUser(null);
       }else{
         setGitHubUser({login: res.data.login, avatar: res.data.avatar_url})
@@ -265,10 +265,9 @@ export function ChallengesProvider(
       }}
     >
       {children}
-      {user === 'null' && <UserLogin/>}
       {isModalOpen && <LevelUpModal/>}
       {isModalPetOpen && !isModalOpen && <ModalPet/>}
-      {isUserOpen && <UserSubmmit/>}
+      {isUserOpen && <User/>}
     </ChallengesContext.Provider>
   )
 }

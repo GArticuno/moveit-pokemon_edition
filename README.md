@@ -22,10 +22,6 @@ she will level up and evolve along with you on this journey for good health.
 
 When you haven't started a cycle yet, it will show some curiosities that you may not know.
 
-## Login screen
+## Application
 
 ![](https://github.com/GArticuno/moveit-pokemon_edition/blob/main/imagem1.png)
-
-## Challenges screen
-
-![](https://github.com/GArticuno/moveit-pokemon_edition/blob/main/imagem2.png)

@@ -5,11 +5,15 @@
 
     margin: 3rem 0;
     padding-bottom: 1rem;
-    border-bottom: 1px solid var(--secondary);
+    border-bottom: 1px solid var(--ciano);
     
     font-weight: 500;
+}
 
-    span{
-        font-size: 1.25rem;
-    }
+.completedContainer span:first-child{
+    font-size: 1.25rem;
+}
+
+.completedContainer span:last-child{
+    font-size: 1.25rem;
 }
