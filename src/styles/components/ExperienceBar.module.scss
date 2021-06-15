@@ -1,0 +1,42 @@
+.experienceBar{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    span{
+        font-size: 1rem;
+
+        &.currentExperience{
+            position:absolute;
+            top:12px;
+            transform: translateX(-50%)
+        }
+    }
+
+    & > div{
+        flex:1;
+        height: 4px;
+        border-radius: 4px;
+        background: var(--gray-line);
+        margin: 0 1.5rem;
+        position: relative;
+
+        & > div{
+            height: 4px;
+            border-radius: 4px;
+            background: var(--secondary);
+        }
+    }
+}
+
+@media(max-width: 1080px){
+    .experienceBar{
+        margin-bottom: 1rem;
+    }
+}
+
+@media(max-width: 720px){
+    .experienceBar{
+        margin-bottom: 0.5rem;
+    }
+}

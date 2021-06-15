@@ -12,7 +12,7 @@ import { ExperienceBar } from '../components/ExperienceBar';
 import { Profile } from '../components/Profile';
 import {ChallengesProvider} from '../contexts/ChallengesContext';
 
-import styles from '../styles/pages/Home.module.css';
+import styles from '../styles/pages/Home.module.scss';
 
 
 interface HomeProps{
@@ -37,7 +37,14 @@ export default function Home(props: HomeProps) {
     >
       <div className={styles.container}>
         <Head>
-          <title>Move.it(Pokemon edition)</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="description" content="Se mantenha saudável na frente do computador."/>
+          <meta name="theme-color" content="#8244b4"/>
+          <meta property="og:title" content="Move.it(Pokémon edition)"/>
+          <meta property="og:description" content="Se mantenha saudável na frente do computador."/>
+          <meta property="og:image" content="https://i.pinimg.com/originals/f9/05/d2/f905d2c66b32604817eb3f0f9b4e82c0.jpg"/>
+          
+          <title>Move.it(Pokémon edition)</title>
         </Head>
         <ExperienceBar/>
         <CountdownProvider>
