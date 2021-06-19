@@ -1,4 +1,4 @@
-import React, {createContext, useState, ReactNode, useEffect} from 'react';
+import React, {createContext, useState, ReactNode, useEffect, useLayoutEffect} from 'react';
 import Cookies from 'js-cookie';
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
@@ -7,6 +7,7 @@ import knows from '../../knows.json';
 import api from '../apiUser';
 import { UserSubmmit } from '../components/UserSubmmit';
 import { UserLogin } from '../components/UserLogin';
+import { Loading } from '../components/Loading';
 
 interface Challenge{
   type: 'body' | 'eye';
@@ -94,6 +95,8 @@ export function ChallengesProvider(
   const [gitHubUser, setGitHubUser] = useState(null);
   const [cicleIndex, setCicleIndex]= useState(null);
   const [activeChallenge, setActiveChallenge] = useState(null);
+
+  const [load, setLoad] = useState(true);
 
   
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
@@ -225,6 +228,18 @@ export function ChallengesProvider(
       setPet('hatterene');
     }
   },[level, currentExperience, challengesCompleted, user, levelPet, currentPetExperience])
+
+  useEffect(()=> {
+    if(user === 'null' && rest.user !== undefined){
+      setUser(rest.user);
+      
+    }else{
+      const timer = setTimeout(()=>{
+        setLoad(false);
+      }, 2000)
+      return () => clearTimeout(timer);
+    }
+  },[user])
 // ---------------------------Return---------------------------------------
   return(
     <ChallengesContext.Provider 
@@ -265,6 +280,7 @@ export function ChallengesProvider(
       }}
     >
       {children}
+      {load && <Loading/>}
       {user === 'null' && <UserLogin/>}
       {isModalOpen && <LevelUpModal/>}
       {isModalPetOpen && !isModalOpen && <ModalPet/>}

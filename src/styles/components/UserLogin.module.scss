@@ -13,6 +13,23 @@
   
   font-family: 'Inter', sans-serif;
 
+  .logo {
+    height: 5rem;
+    padding-top: 1rem;
+    animation: logo 1s ease normal;
+  }
+
+  @keyframes logo {
+    0%{
+      transform: translate(-150px, 0);
+      opacity:0.2;
+    }
+    100%{
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
   .card {
     display: flex;
     flex-direction: column;

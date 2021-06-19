@@ -14,7 +14,6 @@ import {ChallengesProvider} from '../contexts/ChallengesContext';
 
 import styles from '../styles/pages/Home.module.scss';
 
-
 interface HomeProps{
   level: number;
   currentExperience: number;
@@ -23,7 +22,6 @@ interface HomeProps{
   currentPetExperience: number;
 
 }
-
 
 export default function Home(props: HomeProps) {
   return (
@@ -64,7 +62,6 @@ export default function Home(props: HomeProps) {
     </ChallengesProvider>
   )
 }
-
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
