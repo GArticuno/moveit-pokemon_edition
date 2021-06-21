@@ -1,13 +1,15 @@
-import React, {createContext, useState, ReactNode, useEffect, useLayoutEffect} from 'react';
-import Cookies from 'js-cookie';
+import React, {createContext, useState, ReactNode, useEffect} from 'react';
+import { Cookies } from "react-cookie-consent";
 import challenges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
 import { ModalPet } from '../components/ModalPet';
 import knows from '../../knows.json';
 import api from '../apiUser';
+
 import { UserSubmmit } from '../components/UserSubmmit';
 import { UserLogin } from '../components/UserLogin';
 import { Loading } from '../components/Loading';
+import { Cookies as ModalCookies } from '../components/Cookies';
 
 interface Challenge{
   type: 'body' | 'eye';
@@ -68,6 +70,7 @@ interface ChallengesProviderProps {
   user: string;
   levelPet: number;
   currentPetExperience: number;
+  Cookies: boolean;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
@@ -97,7 +100,6 @@ export function ChallengesProvider(
   const [activeChallenge, setActiveChallenge] = useState(null);
 
   const [load, setLoad] = useState(true);
-
   
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
@@ -214,19 +216,21 @@ export function ChallengesProvider(
   },[])
 
   useEffect(()=> {
-
-    Cookies.set('level', String(level));
-    Cookies.set('currentExperience', String(currentExperience));
-    Cookies.set('challengesCompleted', String(challengesCompleted));
-    Cookies.set('user', user);
-    Cookies.set('levelPet', String(levelPet));
-    Cookies.set('currentPetExperience', String(currentPetExperience));
-    if(levelPet===5){
-      setPet('hattrem');
+    if(rest.Cookies){
+      Cookies.set('level', String(level));
+      Cookies.set('currentExperience', String(currentExperience));
+      Cookies.set('challengesCompleted', String(challengesCompleted));
+      Cookies.set('user', user);
+      Cookies.set('levelPet', String(levelPet));
+      Cookies.set('currentPetExperience', String(currentPetExperience));
+      if(levelPet===5){
+        setPet('hattrem');
+      }
+      if(levelPet===10){
+        setPet('hatterene');
+      } 
     }
-    if(levelPet===10){
-      setPet('hatterene');
-    }
+    
   },[level, currentExperience, challengesCompleted, user, levelPet, currentPetExperience])
 
   useEffect(()=> {
@@ -281,6 +285,7 @@ export function ChallengesProvider(
     >
       {children}
       {load && <Loading/>}
+      {<ModalCookies/>}
       {user === 'null' && <UserLogin/>}
       {isModalOpen && <LevelUpModal/>}
       {isModalPetOpen && !isModalOpen && <ModalPet/>}

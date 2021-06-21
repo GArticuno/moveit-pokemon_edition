@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import {GetServerSideProps} from 'next';
-import Cookies from 'js-cookie';
+import { Cookies } from "react-cookie-consent";
 
 import { ExperiencePetBar } from '../components/ExperiencePetBar';
 import { CountdownProvider } from '../contexts/CountdownContext';
@@ -32,12 +32,13 @@ export default function Home(props: HomeProps) {
       user={Cookies.get('user')}
       levelPet = {props.levelPet}
       currentPetExperience={props.currentPetExperience}
+      Cookies = {Boolean(Cookies.get('Cookies'))}
     >
       <div className={styles.container}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="description" content="Se mantenha saudável na frente do computador."/>
-          <meta name="theme-color" content="#8244b4"/>
+          <meta name="theme-color" content="#ffb7ca"/>
           <meta property="og:title" content="Move.it(Pokémon edition)"/>
           <meta property="og:description" content="Se mantenha saudável na frente do computador."/>
           <meta property="og:image" content="https://i.pinimg.com/originals/f9/05/d2/f905d2c66b32604817eb3f0f9b4e82c0.jpg"/>
