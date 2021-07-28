@@ -1,6 +1,5 @@
 import React from 'react';
 import CookieConsent from "react-cookie-consent";
-import styles from '../styles/components/Cookies.module.scss';
 
 export function Cookies(){
   return(
